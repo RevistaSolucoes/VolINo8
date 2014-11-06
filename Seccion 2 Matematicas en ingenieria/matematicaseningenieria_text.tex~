@@ -1,0 +1,47 @@
+\section{Introducción}
+En este número vamos a hacer un estudio matemático en un nuevo tema: la epidemiología. En esta disciplina, nuevamente, la matemática juega un papel muy importante tanto para el estudio de muchas enfermedades como para  elegir estrategias y buenas conductas para poner freno o minimizar consecuencias de algunas epidemias. El primer matemático que dio su primera aportación matemática sobre epidemiología fue Bernoulli (1700-1782) en un artículo que daba un modelo matemático para la viruela de como la vacunación a base de inoculacion de pus en el organismo era eficaz (véase Ref1, ref 2). Pero no ha sido  hasta el siglo XX que se ha empezado a desarrollar modelos epidemiológicos determinísticos o basados en patrones. Podemos destacar a William Heaton(1862-1936) que formuló un modelo discreto para la epidemia de sarampión, a Anderson Gray McKendrick(1876-1943) y William Ogilvy Kermack(1898-1970) quienes formularon modelos epidemilógicos matemáticos deterministas usados para grandes poblaciones y representados a través de ecuaciones diferenciales. Y por último destacar a Ronald Ross(1857-1932) quien formuló que la transmisión de la malaria senreduciría haciendo desaparecer la población de mosquitos y quien ganó el premio Nobel de Fisiología y Medicina por tal trabajo.
+\begin{figure}
+\begin{figurebox}\centering
+\includegraphics[scale=0.35]{Bernoulli.jpg}
+%\includegraphics[scale=0.4]{hamer .jpg}  encontrar a este hombre a la web
+ \includegraphics[scale=0.1]{william.jpg}
+ \includegraphics[scale=1.18]{Anderson.jpg} 
+\includegraphics[scale=0.36]{Ronald_Ross.jpg} \caption{De izquierda a derecha: Bernoulli, A.G. McKendrick, W.O. kermack y R. Ross}
+\end{figurebox}
+%\caption{De izquierda a derecha: Bernoulli, A.G. McKendrick, W.O. kermack y R. Ross}
+\end{figure}
+El estudio de cada epidemiologia va a venir afectado por caracterícticas intrínsecas de la epidemia. En general, no se puede realizar el mismo estudio para una epidemia originada por una bacteria que por un virus. En el caso de un virús, en general, los individuaos que se han recuperado de la end fermedad han creado una resistencia ante la enfermedad en el que no pueden volver a ser infectados. Pero, en cambio, en el caso de una bacteria los individuos que se repcuperan de la enfermedad puden ser succetibles a volver a enfermarse. Este tipo de diferencias hace que los modelos que podamos construir matemáticamente difieren unos de otros. 
+
+Vamos a distinguir los siguientes tipos de estados que un individuo puede encontrarse intentado cubrir todas las enfermedades posibles:
+\begin{itemize}
+\item Proporción de individuos sanos y succetibles de ser infectados que denotamos por \textbf{S}.
+\item Proporción de individuos infectados que no pueden contagiar a los demás (estado latente) y que denotamos por \textbf{E}.
+\item Proporción de individuos infectados y que pueden infectar a otros, denotamos pot \textbf{I}.
+\item Proporción de individuos resistentes a la enfermedad, denominamos por \textbf{R}.
+\item Proporción de individuos con inmunidad temporal y que denotamos por \textbf{M}.
+\end{itemize}
+
+De esta manera dependiendo de los agentes infecciosos por los que se transmite la enfermedad los individuos podrán estar en un estado o en otro. El modo de transmisión de la enfermedad va as er otro factoer importante para t6ener en cuenta en el modelo que se plantee. Algunos ejemplos de transmisión son de persona a persona (como es la gripe), por insectos como es la malaria o por el medio ambiente como lo es el cólera.
+
+Pero un punto importante cuando se estudia una epidemia es si esta perdurará un tiempo en la población o si desaparecerá paulatinamente. Esto es realizar un estudio si la epidemia será endémica o no.
+Los modelos matemáticos usados para epidemiología suelen distinguirse entre aquellos determinísticos que consideran a los individuos pertenecientes a un estado del modelo y modelos centrados en el individuo que estudian el comportamiento de cada individuo estudiados mediante modelos estocáticos.
+
+Como vemos existen una gran variedad de variables a tener en cuenta para formular un estudio matemático de una epidemia. En este artñiculo vamos a centrarnos en dos modelos sencilos:
+\begin{enumerate}
+\end{enu8merate
+
+\section{Modelo matematico de epidemias sin dependencia espacial}
+En esta primera seccion vamos a ver un modelo matematico deterministico muy sencillo. 
+\section{Modelo de agentes}
+
+
+%\bibliographystyle{plain}
+%\bibliography{catenaria}
+
+
+
+\newpage
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "matematicaseningenieria"
+%%% End: 

@@ -1,0 +1,50 @@
+\begin{multicols}{2}
+
+\cappar
+
+Para este número os planteamos un desafío que pueden encontrar en el libro de Matemagia de Adrián Paenza y un reto ajedrecista. ¡Esperamos que se diviertan! 
+
+\section*{El problema de Monty Hall}
+
+
+\section{El desafío: Monty Hall extendido}
+
+\section*{Ajedrez}
+
+Te ofrecemos un reto ajedrecístico. En esta famosa partida, que te desvelaremos en el siguiente número, 
+las blancas juegan y ganan. ¿Podrías encontrar la espectacular jugada ganadora?
+
+\newgame
+\mainline{1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Nxc3 Bb4 5. Bc4 Qe7 6. Ne2 Nf6 7. O-O O-O 8. Bg5 Qe5 9. Bxf6 Qxf6 10. Nd5 Qd6 11. e5 Qc5 12. Rc1 Qa5 13. a3 Bxa3 14. bxa3 c6 15. Ne7 Kh8 16. Qd6 Qd8 17. Nd4 b6 18. Rc3 c5 19. Ndf5 Ba6}
+% 20. Qg6}
+\begin{center}
+\showboard 
+\end{center}
+
+
+{\bf Las soluciones en el próximo número.}
+\section*{\textcolor{redsol}{Soluciones del número anterior}}
+\subsection*{El desafío: el borrón}
+Para que sea múltiplo de 72 tiene que ser múltiplo de 8 y de 9
+porque son coprimos. Para que sea divisible por 8, las tres últimas
+cifras (79Y) tienen que formar un número múltiplo de 8. Luego,
+tiene que ser 792. Por otro lado, para que sea múltiplo de 9, la
+suma de sus dígitos tiene que ser múltiplo de 9: luego, X + 6 + 7
++ 9 + 2 = X + 24 tiene que ser múltiplo de 9. Conclusión, X = 3. El
+número en cuestión era 36.792. Por lo tanto, cada televisor salió
+a  511 (ya que multiplicado por 72 resulta ser 36.792).
+
+\subsection{Las reglas de divisibilidad}
+
+
+\end{multicols}
+
+\newpage
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "jugando"
+%%% End:
+
+
+

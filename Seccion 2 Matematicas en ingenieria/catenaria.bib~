@@ -1,0 +1,47 @@
+%Article{Buk08,
+% author = 	 {Frank M. White},
+% title = 	 {Mecánica de fluidos},
+% journal = 	 {Mc Graw Hill},
+% year = 	 {2000 ,
+% OPTkey = 	 {},
+% volume = 	 {  },
+% number = 	 {},
+% pages = 	 {},
+% OPTmonth = 	 {},
+% OPTnote = 	 {},
+% OPTannote = 	 {}
+%
+
+@Book{white,
+  author = 	 {Frank M. White},
+  ALTeditor = 	 {},
+  title = 	 {Mecánica de fluidos},
+  publisher = 	 {Mc Graw Hill},
+  year = 	 {2000},
+  OPTkey = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 {},
+  OPTedition = 	 {},
+  OPTmonth = 	 {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+@Book{linkfluids,
+  author = 	 {},
+  ALTeditor = 	 {},
+  title = 	 {http://www.efluid.com/efluids/pages/gallery.htm},
+  publisher = 	 {},
+  year = 	 {},
+  OPTkey = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 {},
+  OPTedition = 	 {},
+  OPTmonth = 	 {},
+  note = 	 {},
+  OPTannote = 	 {}
+}

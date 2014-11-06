@@ -1,0 +1,352 @@
+\section*{Introducción}
+
+En este artículo vamos a ver con mayor formalismo los tipos de datos
+que podemos encontrar en Octave. Veremos como funcionan los comandos
+\textit{do-until} y \textit{switch} y la notación de una función
+\textit{function}. Finalmente hablaremos de como Octave resuelve
+sistemas de ecuaciones no lineales.
+
+\section{Tipos de datos, variables y expresiones}
+ 
+\subsection{Tipos de datos}
+
+En Octave podemos distinguir diferentes tipos de datos como son los
+número reales, los números complejos, las matrices, las cadenas de
+carácteres, los tipos estructurados y celdas. Más concretamente Octave
+trabaja con 3 tipos tipos elementales de datos:
+\begin{itemize}
+\item Numéricos: enteros (con o sin signo, con 8,16,32 o 64 bits) on
+  reales representados en coma flotanrte simple(32 bits) o doble(64
+  bits).
+\item Lógicos: que lo representan con 0 ó 1 mediante 8 bits.
+\item Caracter:que se representa con 16 bits.
+\end {itemize}
+
+Veamos como sigue como con el comando \textit{typeinfo(x)} nos da la
+información de que tipo de dato es $x$.
+\begin{octavebox}
+  \begin{verbatim}
+a=1;
+b=2+i;
+c=[1 2 3;4 5 6];
+d='obrigada';
+e={a,b,c,d};
+typeinfo(a)
+typeinfo(b)
+typeinfo(c)
+typeinfo(d)
+typeinfo(e)
+\end{verbatim}
+\end{octavebox}
+La salida que se obtiene de estas instrucciones es:
+\begin{octavebox}
+  \begin{verbatim}
+ans = scalar
+ans = complex scalar
+ans = matrix
+ans = sq_string
+ans = cell
+  \end{verbatim}
+\end{octavebox}
+Si usamos la instrucción \textit{typeinfo()} nos devolverá la
+información de todos los tipos de datos que cuenta Octave. Para mayir
+información de tipos de datos y de construcción de datos estructurados
+puedes remitirte al tutorial oficial que puedes encontrar aquí
+\url{http://www.gnu.org/software/octave/octave.pdf}.  Para datos
+numéricos tenemos un comando que a veces sçpuede ser de utilidad que
+es el comando \textit{format} que sirve para cambiar el tipo de
+visualización en pantalla de los datos. En general por defecto está
+activado el formato \textit{short}, que muestra 5 dígitos
+significativos. Mira, alguna de sus opciones como sigue,
+\begin{octavebox}
+  \begin{verbatim}
+octave:12> pi
+ans =     3.1416
+octave:13> format long
+octave:14> pi
+ans =  3.14159265358979
+octave:15> format long e
+octave:16> pi
+ans =    3.14159265358979e+00
+octave:17> format long E
+octave:18> pi
+ans =    3.14159265358979E+00
+octave:19> format rat
+octave:20> pi
+ans = 355/113
+  \end{verbatim}
+\end{octavebox}
+ 
+\subsection{Variables}
+En programación, una variable está formada por un espacio en el
+sistema de almacenaje (memoria principal de un ordenador) y un nombre
+simbólico (un identificador) que está asociado a dicho espacio. Ese
+espacio contiene una cantidad o información conocida o desconocida, es
+decir un valor. El nombre de la variable es la forma usual de
+referirse al valor almacenado: esta separación entre nombre y
+contenido permite que el nombre sea usado independientemente de la
+información exacta que representa. El identificador, en el codigo
+fuente de la computadora puede estar ligado a un valor durante el
+tiempo de ejecución y el valor de la variable puede por lo tanto
+cambiar durante el curso de la ejecución del programa. El concepto de
+variables en computación puede no corresponder directamente al
+concepto de variables en matemática. En Octave la notación es la
+siguiente:
+\begin{mybox}
+variable=expresión
+\end{mybox}
+Cuando hemos comenzado una sesión de Octave el espacio de trabajo está
+vacío. Algunos comandos que pueden ser de interés son los comandos:
+\begin{itemize}
+\item \textit{whos}: nos da la lista de las variables del espacio de trabajo con sus características: tamaños y tipos.
+\item \textit{clear}: este comando borra el espacio de trabajo.
+\item \textit{save} y \textit{load}: si queremos conservar ciertas
+  variables para usar en otro momento, podemos grabarlas con el
+  comando \text{save} y recuperarlas en cualquier monçmento con el
+  comando \textit{load}. Estas se grabarán en el espacio de trabajo
+  que estérs trabajando, Puedes ver donde es con el comando
+  \textit{cd}
+\end{itemize}
+Veamos algunos ejemplos:
+\begin{octavebox}
+\begin{verbatim}
+%  COMENZAMOS SESIÓN
+whos
+A=2
+b=[pi;2;3]
+whos
+mivariable='mi nombre';
+global mivariable
+whos
+load(mivariable)
+\end{verbatim}
+\end{octavebox}
+En general las variables se mantendrán es el espacio de trabajo de la sesión. Cuando se inicia una sesión de trabajo en Octave es espacio de variables estará vacío e irñá almacenando las que se vayan generando. Una vez cerrado la sesión de trabajo las variables serán eliminadas. Si estás interesado en guardar alguna podrás hacerlo con el comando \textit{save} y recuperarla con el comando \textit{load}.
+
+\subsection{Expresiones}
+No vamos a entrar en detalle pero vamos a dar varios ejemplos de diferentes expresiones en Octave para que puedas hacerte a la idea del potencial y de sus distintos usos a la hora de programar. 
+\begin{octavebox}
+\begin{center}
+\begin{tabular}{ccc}
+Expresiones con índices &  Llamadas de funciones & Expresiones booleanas\\ \hline
+$a=[1 \; 2;3 \; 4;5 \;6;7 \;8]$ & $sqrt(x^2+y^2)$ & $a \; \& \& \; b$ \\
+$a([1 \; 3],2)$ & $ldivide(x,y)$ & $and(a,b)$ \\
+$a(:,2)$ & $eye(3)$ & $not(a)$ \\
+$a(1:2:end,:)$ & $rand()$ & $or(a,b)$ \\
+ & $sqrt(x^2+y^2)$ & $a \& \& b++$ \\
+\end{tabular}
+\end{center}
+\end{octavebox}
+
+\section{Funciones}
+Progrmas complicados en Octave pueden ser simplificados mediante funciones. Estas pueden ser definidas o bien en la línea de comandos de la sesión interactiva de Octave, o bien en un archivo con extensión .m. Recordad que los archivos de extensión .m pueden ser o bien scripts: que recogen diferentes ordenes que se ejecutan cuando hacemos el llamado en la loínea de comandos con el nombre del scripts o funciones, las cuales el nombre del archivo como el nombre de la función deben ser el mismo. La tipografía de una función puede  simplificarse como sigue en la Tabla \ref{tab:function}.
+\begin{table}[!ht] 
+\begin{mybox}%{c}{\textwidth} 
+%\begin{table}  
+\begin{tabular}{l|l|l}
+    \begin{minipage}{0.2\linewidth}
+\begin{verbatim} 
+function name
+body
+endfunction
+\end{verbatim}
+\end{minipage}&
+    \begin{minipage}{0.3\linewidth}
+\begin{verbatim} 
+function name (arg-list )
+body
+endfunction
+\end{verbatim}    
+    \end{minipage}&
+    \begin{minipage}{0.4\linewidth}
+\begin{verbatim} 
+function [ret-list ] = name (arg-list )
+body
+endfunction
+\end{verbatim}    
+\end{minipage}\\
+ \end{tabular}
+%\end{table}
+\end{mybox}\caption{De izquierda a derecha: sin input ni output, con input, con output e input}\label{tab:function}
+\end{table}
+
+Veamos tres ejemplos de funciones.
+
+\begin{table}[!ht] 
+\begin{mybox}%{c}{\textwidth} 
+%\begin{table}  
+\begin{tabular}{l|l}
+    \begin{minipage}{0.4\linewidth}
+\begin{verbatim} 
+function simple1()
+printf("Imaginação leva-nos
+ a qualquer lado.");
+endfunction
+\end{verbatim}
+\end{minipage}&
+    \begin{minipage}{0.6\linewidth}
+\begin{verbatim} 
+function simple2(nombre,fecha)
+  printf("Firmado \n %s \n %s\n",nombre,fecha);
+endfunction;
+\end{verbatim}    
+    \end{minipage}\\
+ \end{tabular}
+%\end{table}
+\end{mybox}\caption{De izquierda a derecha: sin input ni output, con input}\label{tab:function}
+\end{table}
+
+\begin{table}[!ht] 
+\begin{mybox}%{c}{\textwidth} 
+%\begin{table}  
+\begin{tabular}{l}
+    \begin{minipage}{1\linewidth}
+\begin{verbatim} 
+function [palabra longitud]=simple3(nombre)
+  if (ischar(nombre)==1)
+    palabra='True';
+    longitud=length(nombre);
+    else
+      palabra="False";
+      longitud=
+   endif
+endfunction
+\end{verbatim}    
+\end{minipage}\\
+ \end{tabular}
+%\end{table}
+\end{mybox}\caption{Función con argumentos de entrda y de salida}\label{tab:function}
+\end{table}
+
+Mostrramos a continuación la llamada a funciones que hacemos y la salida: 
+\begin{mybox}
+\begin{tabular}{l}
+    \begin{minipage}{0.7\linewidth}
+\begin{verbatim} 
+>>simple1()
+Imaginação leva-nos a qualquer lado.
+
+\end{verbatim}
+\end{minipage}\\
+ \begin{minipage}{\linewidth}
+\begin{verbatim} 
+>>simple2("maria","2 de septiembre de 1996")
+Firmado 
+ maria 
+ 2 de septiembre de 1996
+
+\end{verbatim}
+\end{minipage}\\
+ \begin{minipage}{\linewidth}
+\begin{verbatim} 
+>>[sal1 sal2]=simple3("Antonio Yus")
+sal1 = True
+sal2 =  11
+\end{verbatim}
+\end{minipage}
+ \end{tabular}
+\end{mybox}
+
+\section{Comandos: \textit{do-until} y \textit{switch}}
+
+\subsection{switch}
+Es muy comun realizar diferentes opciones dependiendo de los valores de una variable. Esto puede hacerse con el comando \textit{if}. Veamos el siguiente ejemplo:
+
+\begin{octavebox}
+\begin{verbatim}
+if (X == 1)
+   haz_algo ();
+elseif (X == 2)
+   haz_algo_distinto ();
+else
+   haz_algo_completamente_distinto ();
+endif
+\end{verbatim}
+\end{octavebox}
+
+Otra opcion para realizar este tipo de órdenes nes mediante el comando \textit{switch} como sigue:
+
+\begin{octavebox}
+\begin{verbatim}
+switch (X)
+ case 1
+    haz_algo ();
+ case 2
+    haz_algo_distinto ();
+ otherwise
+    haz_algo_completamente_distinto ();
+endswitch
+\end{verbatim}
+\end{octavebox}
+
+\subsection{do-until}
+
+El comando \textit{do-until} es muy parecido al comando \textit{while} que vimos en el número anterior pero con las siguientes diferencias: las repeticiones se realizan hasta que la condición sea cierta y el test de la condición se realiza al final no al principiio como el del \textit{while}.
+\begin{octavebox}
+\begin{verbatim}
+do
+body
+until (condition )
+\end{verbatim}
+\end{octavebox}
+
+
+\subsection{Solución al reto de la anterior semana}
+
+La semana anterior planteamos el siguiente reto:
+
+%\begin{wrapfigure}{r}{\textwidth} 
+\begin{mybox}
+   \centering {\fontsize{20}{10}\selectfont\color{red} El Reto}
+  %\begin{tabular}{cc}
+  %  \begin{minipage}{0.2\linewidth}
+  %    {\fontsize{10}{5}\selectfont\color{red} El Reto}
+  %  \end{minipage}&
+  %  \begin{minipage}{0.8\linewidth}
+  %     \begin{figurebox}
+
+   \begin{center}\scalebox{0.64}{\input{gatito}}\end{center}
+  % \end{figurebox}
+Interpola mediante splines el lomo (parte roja) del gato.
+  %  \end{minipage}
+  %\end{tabular}\\
+  Envía la solución a: \url{revista@revistasolucoes.com}
+%\includegraphics[scale=0.4]{topimage.jpg}\\
+    
+\end{mybox}
+%\end{wrapfigure}
+
+¿Cómo os fue? Nosotros os damos la siguiente solución. Puedes encontrar el programa solución en la Sección de Códigos del formato y la salida que se tiene es la siguiente:
+\begin{mybox}
+   \centering {\fontsize{20}{10}\selectfont\color{red}Una solución al Reto}
+  %\begin{tabular}{cc}
+  %  \begin{minipage}{0.2\linewidth}
+  %    {\fontsize{10}{5}\selectfont\color{red} El Reto}
+  %  \end{minipage}&
+  %  \begin{minipage}{0.8\linewidth}
+  %     \begin{figurebox}
+
+   \begin{center}\scalebox{0.64}{\input{gatitosplines}}\end{center}
+  % \end{figurebox}
+En azul, la aproximación del lomo mediante splines.
+  %  \end{minipage}
+  %\end{tabular}\\
+  %\includegraphics[scale=0.4]{topimage.jpg}\\
+    
+\end{mybox}
+
+
+
+
+%\vspace{3cm}
+%\noindent
+%\includegraphics[width=\textwidth]{pubmm2.png}
+
+\newpage
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "informaticaeningenieria"
+%%% End: 
+
+
+

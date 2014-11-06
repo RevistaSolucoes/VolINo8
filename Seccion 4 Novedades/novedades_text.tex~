@@ -1,0 +1,72 @@
+\section{Un supermercado de cero consumo eléctrico}
+%\begin{multicols}{2}
+\cappar La cadena Eroski de supermercados comenzó hace más de un año un proyecto de un supermercado el cual pueda autoabastecerse de energía, sin necesidad de consumo de energia desde la red eléctrica. El objetivo de este proyecto es demostrar la viabilidad técnica y económica de suministrar la energía que necesita un supermercado de 2.000 m2 con fuentes de energía renovables. Además de la implantación de medidas de ahorro energético, está prevista la instalación de un sistema de trigeneración capaz de suministrar las necesidades de frío, calor y electricidad a partir de biomasa.
+%\begin{multicols}{2}
+\begin{wrapfigure}{r}{0.5\textwidth} 
+ % \vspace{-0.7cm}
+  \begin{mybox}
+    BIOMASA: es la utilización de materia orgánica para convertirla en energía. La materia orgánica puede tener diferentes orígenes como por ejemplos residuos ganaderos, forestales o pesqueros. La transformación a energía de esa materia orgánica puede realizarse a través de combustión, digestión anaerobia, gasificación o pirolisis. 
+  \end{mybox}
+\end{wrapfigure}
+
+En un supermercado tradicional aproximadamente un 70\% de la energía es destinada a la producción de frío mediante compresores eléctricos. El proyecto que ahora se inicia, denominado Lifezerostore, desarrollará un sistema de absorción de amoniaco capaz de suministrar el frío requerido por las cámaras refrigeradas de almacenamiento, las islas de congelado y los murales de sala de ventas, además de un ciclo ORC (Ciclo Orgánico de Rankine) que generará energía eléctrica a partir del calor de una caldera de biomasa integrada. Todo este equipamiento será instalado en un contenedor diseñado a tal fin, que se ubicará en el exterior del edificio, asegurando de esta forma la flexibilidad del sistema y su posterior extensión a futuras instalaciones. 
+%\begin{center}
+\begin{wrapfigure}{r}{0.5\textwidth} 
+  \begin{figurebox}
+    \vspace{1.1cm}
+  \centering
+  \includegraphics[width=\textwidth]{biomasa.jpg}
+  \caption{Distintas materias orgánicas.}
+  \label{fig:1}
+\end{figurebox}
+\end{wrapfigure}
+%\end{center}
+%\end{multicols}
+
+\section{Atlas Global de Recurso Solar y Eólico}
+
+En 2013 se puso a disposición mundial el primer Atlas Global de recursos Solar y Eólico. El objetivo de la creación de este atlas es aumentar la conciencia en el planeta de generar energía limpia. La  Agencia Internacional de Energías Renovables (IRENA, por sus siglas en inglés) ha creado el primer Atlas Global de Energía Solar y Eólica de consulta online fue quien lideró este proyecto que podemos encontrar online aquí: \url{http://globalatlas.irena.org/}.
+
+Este atlas nos permite:
+\begin{itemize}
+\item Ver los mapas de recursos de los principales institutos técnicos en el mundo.
+\item Acceso a las herramientas para la evaluación del potencial técnico de las energías renovables.
+\end{itemize}
+
+Mostramos a continuación algunos de los tipos de mapas que podemos observar con este atlas.
+
+\begin{figure}[ht!]
+\begin{center}
+\begin{figurebox}
+  \centering
+    \begin{subfigure}{\textwidth}
+  \centering
+   \includegraphics[height=200pt]{radacion.png}
+   \caption{Contador}
+\end{subfigure}
+ \begin{subfigure}{\textwidth}
+  \centering
+   \includegraphics[height=200pt]{vientoafrica.png}
+   \caption{PLC}
+\end{subfigure}
+\begin{subfigure}{\textwidth}
+\centering
+  \includegraphics[height=200pt]{biomateria.png}
+  \caption{Concentrador}
+ \end{subfigure}
+ \caption{De arriba a abajo: radiación, viento y bioenergía de África.} \label{fig:mapas}
+\end{figurebox}
+\end{center}
+\end{figure}
+
+
+%\vspace{3.75cm} 
+%\noindent
+%\includegraphics[width=\textwidth,scale=0.5]{pubmm.png}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "novedades"
+%%% End: 
+
+

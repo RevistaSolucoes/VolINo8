@@ -1,0 +1,27 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aqui vamos a tener la funcion de la aceleracion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function [ac]=aceleration(x,A,B,q,q1,q2,m)
+  %x,A,B son puntos 
+  Ke=8.9875517873681764*10^9;
+  ac=(Ke*q/m)*(q1*(x-A)/(norm(x-A)^3)+q2*(x-B)/(norm(x-B)^3)) 
+endfunction
+
+
+
+%%%
+%%% Grafica del error de Euler
+%
+% [y1 e1]=euler(30,0.5);
+% [y1 e2]=euler(30,0.4);
+% [y1 e3]=euler(30,0.3);
+% [y1 e4]=euler(30,0.2);
+% [y1 e5]=euler(30,0.1);
+% plot([0.5 0.4 0.3 0.2 0.1],[e1 e2 e3 e4 e5])
+%
+
+
+
+

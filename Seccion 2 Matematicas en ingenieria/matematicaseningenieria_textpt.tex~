@@ -1,0 +1,304 @@
+\section{Fluidos e fluxo de fluidos}
+
+O que é um fluido? Um fluido é uma substância que se deforma continuamente quando é submetida a um esforço cortante, sem importar o pequeno que seja o esforço aplicado. Este conceito engloba tanto a,
+
+\begin{itemize}
+\item os \emph{líquidos}, os quais tomam a forma do recipiente que os aloja e mantêm o seu volume
+\item os \emph{gases}, os quais carecem de volume como de forma própria
+\end{itemize}
+
+\begin{figure}[h!]
+ \begin{figurebox}
+  \vspace{20pt}
+  \centering
+\begin{subfigure}{.3\textwidth}
+ \centering
+  \includegraphics[height=100pt]{fig1.jpg}
+  \caption{Película de sabão iluminada}
+ \label{fig:0a} 
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+ \centering
+ \includegraphics[height=100pt]{fig2.jpg}
+ \caption{Deslocamento de viscosidade}
+ \label{fig:0b}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+ \centering
+ \includegraphics[height=100pt]{fig3.jpg}
+ \caption{Bolhas em detergente puro}
+ \label{fig:0b}
+\end{subfigure}
+\caption{Imagens de comportamento de fluidos extraídas de \cite{linkfluids}}
+\label{fig:test}
+ \end{figurebox}
+\end{figure}
+
+O estudo do movimento de um fluido é o que chamamos mecânica de fluidos. O fluxo é definido como o movimento de um fluido. O estudo do fluxo é muito complexo, e não é o mesmo estudar o fluido da água, o fluido do mel, o fluido o sangue ou o comportamento do fumo de um cigarro. Nós, neste artigo, vamos centrar-nos em fluidos que se denominam {\em fluidos ideais}. Consideramos o comportamento de um fluido ideal cujas características são as seguintes:
+
+\begin{itemize}
+\item \emph{Não viscoso:} isso significa que se despreza a fricção interna entre as diferentes partes do fluido. Pense: O que é que é mais viscoso, o mel ou a água?
+\item \emph{Estado estacionário:} isso é que a velocidade do fluido num ponto é constante com o tempo. Estes caracterizam-se pelas seguintes propriedades:
+\item \emph{Incompressível} a densidade do fluido permanece constante com o tempo.
+\item \emph{Irrotacional:} não apresenta turbilhões, isto é, não há momento angular do fluido relativamente a qualquer ponto. Ou seja, cada partícula do fluido segue uma trajetória uniforme e estas não se cruzam. Pense: o fumo de um cigarro é um fluido irrotacional?
+\end{itemize}
+
+%\begin{wrapfigure}{r}{0.7\textwidth} 
+%\vspace{-1.2cm}
+% \begin{mybox}
+%  Outra classificação :\emph{fluidos newtonianos e não newtonianos} procede da palavra \emph{catena},
+%  que significa \emph{cadeia} em Latim. Um fluido newtoniano é um fluido cuja viscosidade pode ser considerada constante no tempo. O melhor exemplo deste tipo de fluidos é a água em contraposição com a cola, o mel ou os géis e sangue, que são exemplos de fluidos não newtonianos.
+%\end{mybox}
+%\vspace{-1cm}
+%\end{wrapfigure}
+
+
+Fluidos ideais puros na realidade não existem, mas sim podemos desprezar essas diferenças e poder tomar alguns líquidos e gases como fluidos ideais. O exemplo mais próximo de fluido ideal é a água. Em particular, vamos estudar alguns detalhes do estudo de fluxos pelo interior de canos, como sejam o conhecimento do caudal e a velocidade do fluido que circula através de um cano.
+
+
+Algumas curiosidades da complexidade que apresentam os fluidos e o fluxo de fluidos são:
+\begin{itemize}
+\item Revelaram que, na ausência de gravidade, os líquidos tornam-se em algo mais viscoso que tende para se unir numa única bola com uma grande tensão superficial. E que se colocarmos ao lado uma bolha de água mais pequena, a bola grande absorve-a rapidamente, como se fosse um íman.
+
+\item O estudo de fluidos é algo complexo, mas também podemos vê-lo como algo artístico. Ver a Figura 1.
+
+\end{itemize}
+\section{Equação de Continuidade}
+
+Quando deitamos água por um lado de um tubo oco e aberto por ambos os lados, sabemos que alguma coisa se vai passar, não sabemos? A água vai sair pelo outro lado. Tanto faz se o tubo tem diâmetro constante ou se muda, o caudal que entra por um lado vai sair pelo outro. Isto é o que se chama em mecânica de fluidos a Equação de Continuidade. Esta equação é apenas um caso particular do princípio de conservação da massa (ver \cite{white}). Vamos vê-la.
+
+Vamos referir-nos à Figura \ref{fig:2} para entender melhor o raciocínio que vamos levar a cabo. 
+
+
+\begin{figure}[h!] 
+\begin{figurebox}
+   \centering
+  \begin{tikzpicture}
+   \shade[top color=gray, bottom color=black] (-1,-2) rectangle +(14,0.2);
+
+   \fill[black] (0,4) .. controls (5,4) .. (6,2)
+   .. controls (7,0) .. (12,0)
+   arc (90:270:0.2 and 0.5)
+   .. controls (6.5,-1) .. (5.5,0.5)
+   .. controls (4.5,2) .. (0,2)
+   arc (270:90:0.4 and 1) -- cycle;
+   \draw[dashed] (12,-1) arc (-90:90:0.2 and 0.5);
+
+   \draw[<-,very thick] (12.5,-0.5)--(13.5,-0.5);
+   \draw [black] (13.2,-1) node {$F_1=p_1 A_1$};
+   \draw[<-,very thick] (11,0.5)--(13.5,0.5);
+   \draw [black] (13.2,1) node {$V_1$};
+   \draw[<->,very thick,dashed] (12,-2) --(12,-1);
+   \draw [black] (12.5,-1.5) node {$y_1$};
+   \draw[very thick,white] (11,-1)--(11,-0.7);
+   \draw [white,very thick] (11.4,-0.5) node {$\triangle x_1$}; 
+
+   \draw[->,very thick] (-2,3)--(-1,3);
+   \draw [black] (-1.5,3.4) node {$F_2=p_2 A_2$};
+   \draw[<-,very thick] (0,4.4)--(2.5,4.4);
+   \draw [black] (2.2,4.8) node {$V_2$};
+   \draw[very thick,white] (1,2)--(1,2.3);
+   \draw [white,very thick] (0.4,2.5) node {$\triangle x_2$}; 
+   \draw[<->,very thick,dashed] (0,-2) --(0,2);
+   \draw [black] (0.5,0.5) node {$y_2$}; 
+   
+  \end{tikzpicture}
+ \caption{fluido em movimento num tubo}
+ \label{fig:2}
+ \end{figurebox}
+\end{figure}
+
+
+%\begin{wrapfigure}{r}{0.5\textwidth} 
+% \begin{figurebox}
+% \centering
+% \includegraphics[width=\textwidth]{Tuberia1.png}
+% \caption{Hilos com distintos longitudes.}
+% \label{fig:2}
+%\end{figurebox}
+%\end{wrapfigure}
+
+Consideramos um fluido que se movimenta ao longo de um tubo, cuja secção transversal aumenta em direção do fluxo, como na Figura \ref{fig:2}. Num intervalo de tempo que vamos chamar $\triangle t$, na secção mais estreita do tubo de área $A_1$, o fluido desloca-se uma distância $\triangle_1= V_1 \cdot \triangle t$ sendo $V_1$ a velocidade do fluido. A massa contida no volume $A_1 \cdot \triangle_1$ é $m_1=\rho_1 \cdot A_1 \cdot \triangle x_1$ sendo $\rho_1$ a densidade do fluido nesse intervalo de tempo. De forma similar, na secção larga do tubo de área $A_2$, obtêm-se expressões equivalentes no mesmo intervalo de tempo $\triangle t$, substituindo o subíndice 1 por 2. Mas a massa conserva-se no fluxo estacionário, isto é, a massa que atravessa por $A_1$ é igual à massa que passa por $A_2$ no intervalo de tempo $\triangle t$. Deste modo, temos a equação de Continuidade como se segue:
+
+\begin{equation} 
+\rho_1 \cdot A_1\cdot V_1=\rho_1\cdot A_2 \cdot V_2
+\end{equation}
+
+Se estamos num fluido incompreensível, esta equação reduz-se a:
+
+\begin{equation}\label{EqContinuidad} 
+A_1\cdot V_1=A_2\cdot V_2=constante.
+\end{equation}
+
+A quantidade $A\cdot V$ chama-se fluxo de volume ou caudal. E, o que é que podemos deduzir desta equação ? Que à maior secção, menor velocidade.Ou seja, olhando para a Figura \ref{fig:2}, por onde irá a água mais depressa, na parte estreita ou na parte mais larga?
+
+Com esta simples equação podemos fazer um simples exercício. Se reparar, o que é que lhe acontece à água quando sai da torneira? O fio de água parece que é mais fino quanto mais longe da torneira, não é? Imaginemos que a boca da torneira é circular com um raio $r_0$, Podemos ver como diminui essa gota usando a equação de continuidade. À saída da torneira podemos supor que a velocidade da água é $V_0$. Portanto o caudal à saída da torneira é $V_0 \cdot \pi \cdot r_o^2$. A pergunta que nos colocamos é, qual é o caudal a uma distância $h$ da saída da torneira? 
+
+ A velocidade da água a essa distância $h$ é $V_f$ e o seu valor é calculado como $$V_f^2=V_0²+\frac{1}{2}hg,$$ sendo $g$ a aceleração gravitatória e portanto o caudal a distância $h$ da torneira é $\sqrt{V_0^2+\frac{1}{2} h g} \cdot \pi \cdot r^2 $ sendo $r$ o raio da superfície da água a essa altura. E usando a equação de continuidade sabemos que o caudal é constante e portanto, temos que
+$$
+V_0 \pi r_o^2=(V_0²+\frac{1}{2}hg) \pi r^2,
+$$
+e despejando a incógnita $r$, temos que 
+\begin{equation}\label{eq:radio}
+r=r_o \sqrt[4]{\frac{V_0^2}{V_0^2+\frac{1}{2}hg}}. 
+\end{equation}
+
+Usando octave podemos ver melhor a interpretação da fórmula dada na equação \ref{eq:radio}. Partindo de dados iniciais, a velocidade inicial (por exemplo $V_0=3.2$ m/s), o raio da torneira (por exemplo $r_0=0.05$ m), vamos ver como vai a secção da gota de água segundo a distância $h$ a partir da torneira. 
+\begin{octavebox}
+\begin{verbatim}
+g=9.81;V_0=3.2;r_0=0.05;
+h=0:0.05:10;
+r=r_0.*(V^2./(V^2+2*g*h)).^(1/4);
+plot(h,rh)
+title("Evolução do raio da água ao sair de uma torneira")
+xlabel("h")
+ylabel("r")
+\end{verbatim}
+\end{octavebox}
+
+E desta maneira obtemos a gráfica na Figura \ref{fig:3} em (a). Usando este raio, também podemos desenhar as superfícies da gota de água a diferentes alturas obtendo a figura (b) de Figura \ref{fig:3}. Quer tentar desenhá-lo em octave?
+
+
+\begin{figure}
+ \begin{figurebox}
+  \vspace{20pt}
+  \centering
+\begin{subfigure}{.5\textwidth}
+ \centering
+  \scalebox{0.35}{ \input{rhgrifo.tex}}
+  \caption{}
+ \label{fig:0a} 
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+ \centering
+ \scalebox{0.35}{\input{sgrifo.tex}}
+ \caption{}
+ \label{fig:0b}
+\end{subfigure}
+\caption{A evolução da superfície da água a sair da torneira.}
+\label{fig:3}
+ \end{figurebox}
+\end{figure}
+
+\section{Equação de Bernoulli}
+
+A equação de Bernoulli ou Teorema de Bernoulli é uma lei que se deduz a partir da lei de conservação da energia para um fluido em movimento (ver \cite{white}). É em honra a Daniel Bernoulli, matemático suíço do século XVIII (1700-1782), quem, a partir de medidas de pressão e velocidade em condutos, conseguiu relacionar as
+alterações havidas entre ambas as variáveis. Os seus estudos foram incluídos no livro Hidrodynamica, um dos primeiros tratados publicados sobre o fluxo de fluidos, que data de 1738.
+
+% \begin{wrapfigure}{r}{0.5\textwidth} 
+% \vspace{-0.7cm}
+%  \begin{mybox}
+% {\bf Definição de pressão (wikipedia):} a pressão é uma magnitude física que mede a projeção da força em direção perpendicular por unidade de superfície, e serve para caracterizar como é que se aplica uma determinada força resultante sobre uma linha. No Sistema Internacional de Unidades, a pressão é medida numa unidade derivada que se denomina pascal (Pa) que é equivalente a uma força total de um newton a atuar uniformemente num metro quadrado. No Sistema Inglês, a pressão é medida em libra por polegada quadrada (pound per square inch o psi) que é equivalente a uma força total de uma libra a atuar numa polegada quadrada.
+% \end{mybox}
+% \end{wrapfigure}
+
+Seguindo com a Figura \ref{fig:2} vamos utilizá-la para deduzir a equação de Bernoulli de uma forma simples. É intuitivo dizer que quando um fluido se desloca por uma região em que a sua velocidade ou a sua altura se modificam, a pressão também muda. A força relacionada com a pressão $p_1$ no extremo inferior do tubo é $F_1=p_1 \cdot A_1$ e o trabalho realizado por essa força sobre o fluido é $W_1=F_1 \cdot \triangle x_1= p_1 \cdot A_1 \cdot \triangle x_1=p_1 \cdot V$ em que $V$ é o volume do fluido considerado.
+De forma equivalente, se considerar um mesmo intervalo de tempo, o volume $V$ de fluido que atravessa a secção superior de área $A_2$ é o mesmo. Desta forma, o trabalho é $W_2 = -p_2\cdot A_2 \cdot \triangle x_2 = -p_2\cdot V$. O trabalho total $W$ pode escrever-se como,
+\begin{equation}\label{eqEx}
+W=W_1+W_2=(p_1-p_2) \cdot V.
+\end{equation}
+
+Aplicando o princípio da conservação da energia mecânica, temos que o trabalho das forças exteriores que atuam sobre um sistema de partículas modifica a energia do sistema de partículas, isto é, a soma das variações da energia cinética ($\triangle E_c$) e a energia potencial ($\triangle E_p$) do sistema de partículas é igual a $W$. Se denotarmos por $\triangle m$ a massa que passa pelo tubo no tempo $\triangle t$, temos que:
+\begin{equation}\label{eqEc}
+\triangle E_c=\frac{1}{2} \triangle m \cdot v_1^2-\frac{1}{2} \triangle m \cdot v_2^2,
+\end{equation}
+
+e se denotamos por $g$ à constante de gravitação universal e a $y_1$ e $y_2$ a altura a que se encontram as secções $A_1$ e $A_2$ respetivamente, tem-se que,
+
+\begin{equation}\label{eqEp}
+\triangle E_p= \triangle m \cdot g \cdot y_2-\triangle m \cdot g \cdot y_1.
+\end{equation}
+
+Assim, usando as equações (\ref{eqEx}), (\ref{eqEc}) e (\ref{eqEp}), temos o seguinte resultado:
+\begin{equation}
+(p_1-p_2) V=\frac{1}{2} \triangle m \cdot v_1^2-\frac{1}{2} \triangle m \cdot v_2^2+\triangle m \cdot g \cdot y_2-\triangle m \cdot g \cdot y_1.
+\end{equation}
+
+E, a partir daqui, é muito fácil deduzir a famosa equação de Bernoulli usando que a densidade $\rho=\frac{\triangle m}{V}$ e portanto,
+
+\begin{equation}\label{eqBernoulli}
+p_1+\frac{1}{2}v_1^2+\rho g y_1=p_2+\frac{1}{2}v_2^2+\rho g y_2.
+\end{equation} 
+Ou analogamente que $p_1+\frac{1}{2}v_1^2+\rho g y_1=constante.$
+
+Reparemos que em todo o momento os cálculos anteriores supuseram que o fluido é ideal. Já deduzimos de uma forma simples a equação de Bernoulli, mas agora a pergunta é, o que é que tem de especial esta equação ? Vamos ver algumas das suas utilidades.
+
+
+\subsection{Canos}
+
+Já se perguntou alguma vez porque é que se transporta a água em canos? O método mais comum para transportar fluidos de um ponto para outro é impulsioná-lo através de um sistema de canos. Os canos de secção circular são os mais frequentes, uma vez que esta forma oferece não só maior resistência estrutural, mas também maior secção transversal para o mesmo perímetro exterior que qualquer outra forma.
+Vamos ver alguns simples e gráficos exemplos de que é que serve o que foi aprendido neste artigo.
+
+
+\subsubsection{Canos horizontais}
+
+Se o cano for horizontal observemos que a equação de Bernoulli (\ref{eqBernoulli}) fica reduzida a,
+\begin{equation}\label{eqBernoulli2}
+p_1+\frac{1}{2}v_1^2=p_2+\frac{1}{2}v_2^2.
+\end{equation}
+Usando esta equação (\ref{eqBernoulli2}) e a Equação de continuidade (\ref{EqContinuidad}) pode concluir-se que se reduzirmos a área transversal de um cano para que aumente a velocidade do fluido que passa por ela, a pressão reduzir-se-á. Por exemplo, imagine que está a regar o jardim da sua avó com uma mangueira e aperta a ponta, o que é que se passa? O que se passa é que ao apertar a ponta, o diâmetro da mangueira torna-se mais pequeno e portanto usando a equação de continuidade (\ref{EqContinuidad}) então a velocidade aumenta e agora a água sai com maior velocidade. Ao sair com maior velocidade o termo $p_2+\frac{1}{2}v_2^2$ de (\ref{eqBernoulli2}) deve ter o mesmo valor, portanto necessariamente a pressão no ponto de saída da mangueira deve ser menor. Daqui a conclusão "à maior velocidade menor pressão".
+
+\begin{wrapfigure}{r}{0.5\textwidth} 
+  \vspace{2cm}
+  \begin{mybox}
+    A experiência mais longa do mundo (Record Guinnes), o efeito da
+    viscosidade num fluido: Em 1927 o Professor Thomas Parnell da
+    Universidade de Queensland na Austrália quis demonstrar aos seus
+    estudantes que há substâncias que, embora pareçam sólidas, na
+    realidade são fluidos com viscosidade muito alta. O professor pôs
+    um pouco de breu num funil e deixou que descansasse durante três
+    anos. Ao longo de uma década formou-se uma gota que caiu em
+    dezembro de 1938. Desde então mais 8 gotas têm caído.
+  \end{mybox}
+\vspace{1cm}
+\end{wrapfigure}
+
+\newpage
+
+\subsubsection{Porque é que no último piso não "chega tão forte" a água ao duche?}
+
+Imaginemos o seguinte problema: 
+
+{\bf Problema:} Faz-se fluir água com uma pressão manométrica de $4,0$
+atm desde a rua até a um edifício de 7 pisos com uma velocidade de
+$0,80$ \metre\per\second\  através de um cano de $0,10$ \metre\  de
+diâmetro. O cano reduz-se a $0,05$ \metre\  de diâmetro no sétimo piso que se
+encontra a uma altura de 20 metros acima do chão onde se deixou uma
+torneira aberta. Calcular velocidade e pressão manométrica da água à
+saída da torneira.
+
+{\bf Solução }:
+
+Vamos denotar a posição 1 o cano do chão e a posição 2 a torneira situada no sétima piso. Se seguirmos a notação do artigo teríamos os seguintes dados:
+$$
+P_1=4 \textrm{atm}=10,4 \cdot 10^4 \pascal,\; V_1=0.80 \metre\per\second, 
+$$ 
+$$
+d_1=0.1\metre, \; y_1=0,
+$$
+$$
+d_2=0.05\metre, \; y_2=20.
+$$ 
+
+Queremos que resolva o problema. As diretrizes são: utilizando a
+equação de continuidade é muito fácil ver que a velocidade da água à
+saída da torneira é de $3.2$ \metre\per\second\  e utilizando esta
+velocidade e a equação de Bernoulli a pressão da água à saída da
+torneira é de $2,01$ atm.
+
+Agora imaginemos o mesmo problema, mas vamos abrir a torneira no primeiro piso, isto é, a 3 metros do chão, qual seria a velocidade e a pressão manométrica? A velocidade a que pode explicar aos seus filhos com todo o pormenor porque é que a água tem mais pressão na casa dos vizinhos do que na sua!
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{catenaria}
+
+
+
+
+\newpage
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "matematicaseningenieria"
+%%% End: 

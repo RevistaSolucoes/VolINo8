@@ -1,0 +1,16 @@
+% Vamos a dibujar en plano un tubo horizontal
+
+function tuboverticaL(pos_ini, d)
+  h=1;
+  hold on;
+circle(pos_ini(1),pos_ini(2),1);hold on;
+circle(pos_ini(1),pos_ini(2)+d,1);
+plot([pos_ini(1)-h pos_ini(1)-h],[pos_ini(2)  pos_ini(2)+d])
+plot([pos_ini(1)+h pos_ini(1)+h],[pos_ini(2)  pos_ini(2)+d])
+axis tight;
+endfunction
+  
+
+
+
+
